@@ -900,36 +900,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Extract video frames for poster images
-    function extractVideoFrame(video, canvas) {
-        return new Promise((resolve) => {
-            video.addEventListener('loadedmetadata', () => {
-                video.currentTime = 1; // Get frame at 1 second
-            });
-
-            video.addEventListener('seeked', () => {
-                const ctx = canvas.getContext('2d');
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                const dataURL = canvas.toDataURL('image/jpeg');
-                resolve(dataURL);
-            }, { once: true });
-        });
-    }
-
-    // Update video posters from video frames
-    document.querySelectorAll('.portfolio-item video').forEach(video => {
-        const canvas = document.createElement('canvas');
-        video.addEventListener('loadedmetadata', () => {
-            video.currentTime = 1;
-        });
-        video.addEventListener('seeked', () => {
-            const ctx = canvas.getContext('2d');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-            video.poster = canvas.toDataURL('image/jpeg');
-        }, { once: true });
-    });
+    // Remote Blob videos already use explicit poster images.
+    // Avoid canvas frame extraction because cross-origin videos can taint the canvas.
 });
