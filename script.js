@@ -359,16 +359,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
 
+    if (new URLSearchParams(window.location.search).get('submitted') === 'true') {
+        showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
+    }
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
             // Get form data
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
 
             // Basic validation
             if (!data.name || !data.email || !data.message || !data.service) {
+                e.preventDefault();
                 showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
@@ -376,12 +379,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
+                e.preventDefault();
                 showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
 
-            // Simulate form submission (replace with actual form handling)
-            // For now, we'll show a success message
+            if (contactForm.action.includes('formsubmit.co')) {
+                return;
+            }
+
+            e.preventDefault();
             showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
             contactForm.reset();
 
