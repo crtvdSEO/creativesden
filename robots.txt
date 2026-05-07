@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://creativesden.com/sitemap.xml
+
+# Disallow admin or private areas (if any are added in the future)
+# Disallow: /admin/
+# Disallow: /private/

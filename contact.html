@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We work with individuals, families, and businesses to create high-quality photo and video content for brands, restaurants, events, and celebrations. Clear communication, transparent pricing, and goal-driven work guide every project.">
+    <meta name="keywords" content="contact creative's den, PNW creative services, get quote, hire photographer, hire videographer">
+    <meta name="author" content="Creative's Den">
+    
+    <title>Contact - Creative's Den | Get In Touch</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rowdies:wght@300;400;700&family=Six+Caps&display=swap" rel="stylesheet">
+    
+    <link rel="preload" as="image" href="mazatlan2022-5.jpg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="brand-link" aria-label="Creative's Den home">CREATIVE'S DEN</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-close-mobile"><button class="nav-close-btn" id="navClose" aria-label="Close menu">✕</button></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="nav-cta-mobile"><a href="contact.html" class="nav-link nav-cta-btn">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Contact Hero -->
+        <section class="page-hero" style="background-image: url('mazatlan2022-5.jpg');">
+            <div class="container">
+                <h1>Ready to Get Started?</h1>
+                <p class="page-hero-subtitle">Let's discuss how we can help grow your brand with quality creative services.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-form-container">
+                        <h2 class="form-title">Start a Conversation</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">First & Last Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Interested In *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="photography">Photography</option>
+                                    <option value="videography">Videography</option>
+                                    <option value="graphic-design">Graphic Design</option>
+                                    <option value="brand-support">Brand Support & Strategy</option>
+                                    <option value="multiple">Multiple Services</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="business">Business Name (if applicable)</label>
+                                <input type="text" id="business" name="business">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Project Details *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="budget">Budget Range *</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">Select budget range...</option>
+                                    <option value="under-1000">Under $1,000</option>
+                                    <option value="1000-5000">$1,000 - $5,000</option>
+                                    <option value="5000-10000">$5,000 - $10,000</option>
+                                    <option value="10000-25000">$10,000 - $25,000</option>
+                                    <option value="25000-plus">$25,000+</option>
+                                    <option value="discuss">Prefer to discuss</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            
+                            <div class="form-message" id="formMessage"></div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <p>We work with individuals, families, and businesses to create high-quality photo and video content for brands, restaurants, events, and celebrations. Clear communication, transparent pricing, and goal-driven work guide every project.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Service Areas</h3>
+                                <p><strong>Based in Tacoma, Washington</strong><br>Serving clients throughout Washington State</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Tacoma is home, and projects are welcomed across Washington State. Travel and related expenses are discussed upfront and quoted based on location and project scope, with flexibility to find solutions that fit your needs and budget.</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Services Offered</h3>
+                                <p>Photography • Videography • Graphic Design<br>Creative Direction • Content Support • Private Chef Services</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Our Approach</h3>
+                                <p>Honest pricing<br>Quality-focused work<br>Clear, transparent communication</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Every project is approached with care and respect for your investment, with an emphasis on long-term value and practical results.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <a href="index.html" aria-label="Creative's Den home">
+                        <img src="White---LOGO.png" alt="Creative's Den" class="footer-logo" width="738" height="425" loading="lazy" decoding="async">
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Photography</a></li>
+                        <li><a href="services.html">Videography</a></li>
+                        <li><a href="services.html">Branding</a></li>
+                        <li><a href="services.html">Private Chef</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Creative's Den. All rights reserved.</p>
+                <p class="footer-copyright"><strong>Copyright Notice:</strong> All photography, videography, and creative content (including images, videos, graphics, and written materials) displayed on this website are the exclusive property of Creative's Den and are protected by United States and international copyright laws. Unauthorized reproduction, distribution, modification, or use of any content without explicit written permission is strictly prohibited and may result in legal action. All rights reserved. For licensing inquiries, please <a href="contact.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: underline;">contact us</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

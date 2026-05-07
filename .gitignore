@@ -1,0 +1,33 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+
+# Large local media - host these in Vercel Blob/Cloudinary instead
+*.mp4
+*.mov
+*.webm
+*.m4v
+*.avi
+videos/
+
+# Local downloaded/export archives
+*.zip
