@@ -53,6 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Custom Cursor
 document.addEventListener('DOMContentLoaded', function() {
     const cursor = document.getElementById('customCursor');
+    const supportsCustomCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (!supportsCustomCursor) {
+        if (cursor) cursor.style.display = 'none';
+        return;
+    }
+
     if (cursor) {
         let mouseX = 0;
         let mouseY = 0;

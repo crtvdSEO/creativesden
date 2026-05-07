@@ -3755,6 +3755,30 @@ section {
 
 /* Touch-friendly tap targets */
 @media (hover: none) and (pointer: coarse) {
+    body {
+        cursor: auto;
+    }
+
+    .custom-cursor {
+        display: none;
+    }
+
+    .galaxy-click-effect {
+        background: radial-gradient(circle,
+            rgba(0, 102, 255, 0.45) 0%,
+            rgba(0, 102, 255, 0.25) 35%,
+            transparent 70%);
+        transition: width 0.22s ease-out,
+                    height 0.22s ease-out,
+                    opacity 0.18s ease-out;
+    }
+
+    .galaxy-click-effect.active {
+        width: 120px !important;
+        height: 120px !important;
+        opacity: 0.45 !important;
+    }
+
     .btn,
     .btn-primary,
     .btn-secondary,
