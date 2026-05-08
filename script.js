@@ -231,7 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Portfolio Modal/Lightbox
 document.addEventListener('DOMContentLoaded', function() {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
     const modal = document.getElementById('portfolioModal');
     const modalClose = document.getElementById('modalClose');
     const modalImage = document.getElementById('modalImage');
@@ -241,35 +240,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!modal) return;
 
-    portfolioItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            const video = this.querySelector('video');
-            const overlay = this.querySelector('.portfolio-overlay');
-            const title = overlay ? overlay.querySelector('h3')?.textContent : '';
-            const description = overlay ? overlay.querySelector('p')?.textContent : '';
+    document.addEventListener('click', function(e) {
+        const item = e.target.closest('.portfolio-item');
+        if (!item) return;
 
-            if (video) {
-                // Handle video
-                modalImage.style.display = 'none';
-                modalVideo.style.display = 'block';
-                modalVideo.src = video.querySelector('source').src;
-                modalVideo.load();
-                modalVideo.play();
-            } else if (img) {
-                // Handle image
-                modalVideo.style.display = 'none';
-                modalImage.style.display = 'block';
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
-            }
+        const img = item.querySelector('img');
+        const video = item.querySelector('video');
+        const overlay = item.querySelector('.portfolio-overlay');
+        const title = overlay ? overlay.querySelector('h3')?.textContent : '';
+        const description = overlay ? overlay.querySelector('p')?.textContent : '';
 
-            if (modalTitle) modalTitle.textContent = title || '';
-            if (modalDescription) modalDescription.textContent = description || '';
+        if (video) {
+            // Handle video
+            modalImage.style.display = 'none';
+            modalVideo.style.display = 'block';
+            modalVideo.src = video.querySelector('source').src;
+            modalVideo.load();
+            modalVideo.play();
+        } else if (img) {
+            // Handle image
+            modalVideo.style.display = 'none';
+            modalImage.style.display = 'block';
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+        }
 
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+        if (modalTitle) modalTitle.textContent = title || '';
+        if (modalDescription) modalDescription.textContent = description || '';
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
 
     // Close modal
@@ -735,7 +735,9 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateCarousel(smooth = true) {
             calculateItemsPerView();
             const itemWidth = 100 / itemsPerView;
-            const gapPercent = track.offsetWidth > 0 ? (14 / track.offsetWidth) * 100 : 0;
+            const itemStyles = window.getComputedStyle(items[0]);
+            const itemGap = parseFloat(itemStyles.marginLeft) + parseFloat(itemStyles.marginRight);
+            const gapPercent = track.offsetWidth > 0 ? (itemGap / track.offsetWidth) * 100 : 0;
             const translateX = -(currentIndex * (itemWidth + gapPercent));
             
             if (smooth) {
@@ -830,10 +832,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
     }
 
-    // Initialize portfolio carousels
-    initPortfolioCarousel('.portfolio-carousel[data-category="photography"]', 'photographyDots');
-    initPortfolioCarousel('.portfolio-carousel[data-category="videography"]', 'videographyDots');
-    initPortfolioCarousel('.portfolio-carousel[data-category="events"]', 'eventsDots');
+    // Initialize the single combined portfolio carousel.
+    initPortfolioCarousel('.portfolio-carousel[data-category="all"]', 'portfolioDots');
 
     // Galaxy click effect for buttons
     function initGalaxyClickEffect() {
