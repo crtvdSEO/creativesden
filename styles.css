@@ -405,6 +405,18 @@ body::before {
     background-size: cover;
     background-position: center;
     z-index: 0;
+    animation: heroSubtleZoom 18s ease-out forwards;
+    transform-origin: center;
+    will-change: transform;
+}
+
+@keyframes heroSubtleZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.04);
+    }
 }
 
 .hero-overlay {
