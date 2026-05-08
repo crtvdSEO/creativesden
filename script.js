@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
-    const navClose = document.getElementById('navClose');
     const navLinks = document.querySelectorAll('.nav-link');
     const body = document.body;
 
@@ -123,14 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.addEventListener('click', function(e) {
             e.stopPropagation();
             toggleMenu();
-        });
-    }
-
-    // Close button functionality
-    if (navClose) {
-        navClose.addEventListener('click', function(e) {
-            e.stopPropagation();
-            closeMenu();
         });
     }
 
