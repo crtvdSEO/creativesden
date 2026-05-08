@@ -2765,9 +2765,11 @@ section {
     .nav-menu {
         position: absolute;
         top: calc(100% + 0.75rem);
-        right: 0;
-        left: auto;
-        transform: translateY(-8px);
+        left: 50%;
+        right: auto;
+        margin-left: 0;
+        margin-right: 0;
+        transform: translate(-50%, -8px);
         flex-direction: column;
         gap: 0.5rem;
         background: 
@@ -2829,7 +2831,7 @@ section {
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
-        transform: translateY(0);
+        transform: translate(-50%, 0);
     }
 
     .nav-menu li {
@@ -3433,7 +3435,8 @@ section {
         width: min(320px, calc(100vw - 1.25rem));
         max-width: 320px;
         padding: 1.25rem 0.75rem;
-        right: 0;
+        left: 50%;
+        right: auto;
     }
 
     .nav-link {
